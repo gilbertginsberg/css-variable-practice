@@ -1,0 +1,25 @@
+:root {
+  --spacing: 20px;
+  --blur: blur(0px);
+  --base: #FFC600;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  margin: 10px;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: var(--blur);
+}
+
+.hl {
+  color: var(--base);
+}

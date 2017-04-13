@@ -1,28 +1,26 @@
 function initialize() {
-  const spacingCtrl = document.getElementById('spacing');
-  const blurCtrl = document.getElementById('blur');
-  const baseCtrl = document.getElementById('base');
-/*  const styles = getComputedStyle(document.documentElement);
-  let spacing = String(styles.getPropertyValue('--spacing')).trim();
-  const blur = String(styles.getPropertyValue('--blur')).trim();
-  const base = String(styles.getPropertyValue('--base')).trim(); */
+  const controls = document.querySelectorAll('.controls input');
 
-  spacingCtrl.addEventListener('change', (event) => {
-    const rangeVal = event.target.value;
+  // Defines handler to update input value
+  function updateInputValue(event) {
+    const val = event.target.value;
+    const name = event.target.name;
     const sizingUnit = event.target.dataset.sizing;
-    document.documentElement.style.setProperty('--spacing', `${rangeVal}${sizingUnit}`);
-  }, false);
 
-  blurCtrl.addEventListener('change', (event) => {
-    const rangeVal = event.target.value;
-    const sizingUnit = event.target.dataset.sizing;
-    document.documentElement.style.setProperty('--blur', `blur(${rangeVal}${sizingUnit})`);
-  }, false);
+    if (sizingUnit) {
+      document.documentElement.style.setProperty(`--${name}`, `${val}${sizingUnit}`);
+    } else {
+      document.documentElement.style.setProperty(`--${name}`, `${val}`);
+    }
+  }
 
-  baseCtrl.addEventListener('change', (event) => {
-    const color = event.target.value;
-    document.documentElement.style.setProperty('--base', `${color}`);
-  }, false);
+  controls.forEach((input) => {
+    input.addEventListener('change', updateInputValue, false);
+  });
+
+  controls.forEach((input) => {
+    input.addEventListener('mousemove', updateInputValue, false);
+  });
 }
 
 window.onload = initialize;

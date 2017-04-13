@@ -2,7 +2,7 @@
 
 :root {
   --spacing: 20px;
-  --blur: blur(10px);
+  --blur: 10px;
   --base: #FFC600;
 }
 
@@ -19,7 +19,7 @@ img {
   margin: 10px;
   padding: var(--spacing);
   background: var(--base);
-  filter: var(--blur);
+  filter: blur(var(--blur));
 }
 
 .hl {

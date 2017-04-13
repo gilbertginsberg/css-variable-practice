@@ -9,12 +9,14 @@ function initialize() {
 
   spacingCtrl.addEventListener('change', (event) => {
     const rangeVal = event.target.value;
-    document.documentElement.style.setProperty('--spacing', `${rangeVal}px`);
+    const sizingUnit = event.target.dataset.sizing;
+    document.documentElement.style.setProperty('--spacing', `${rangeVal}${sizingUnit}`);
   }, false);
 
   blurCtrl.addEventListener('change', (event) => {
     const rangeVal = event.target.value;
-    document.documentElement.style.setProperty('--blur', `blur(${rangeVal}px)`);
+    const sizingUnit = event.target.dataset.sizing;
+    document.documentElement.style.setProperty('--blur', `blur(${rangeVal}${sizingUnit})`);
   }, false);
 
   baseCtrl.addEventListener('change', (event) => {

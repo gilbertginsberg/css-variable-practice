@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
 :root {
   --spacing: 20px;
-  --blur: blur(0px);
+  --blur: blur(10px);
   --base: #FFC600;
 }
 
@@ -10,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: 'Monoton', cursive;
 }
 
 img {
